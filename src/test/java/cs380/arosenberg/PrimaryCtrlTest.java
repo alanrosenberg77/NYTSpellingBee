@@ -1,4 +1,4 @@
-package test;
+package cs380.arosenberg;
 
 import static org.junit.Assert.*;
 
