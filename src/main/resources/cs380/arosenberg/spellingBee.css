@@ -1,0 +1,20 @@
+.ltrBtn {
+	-fx-background-color: #e6e6e6;
+}
+.ltrBtn:hover {
+	-fx-background-color: #999999;
+}
+.ltrBtn:active {
+	-fx-scale-x: 0.9;
+	-fx-scale-y: 0.9;
+}
+#centerBtn {
+	-fx-background-color: #fedc34;
+}
+#centerBtn:hover {
+	-fx-background-color: #cba901;
+}
+#centerBtn:active {
+	-fx-scale-x: 0.9;
+	-fx-scale-y: 0.9;
+}

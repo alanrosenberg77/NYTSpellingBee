@@ -9,6 +9,7 @@ public class PrimaryCtrlTest {
 
 	@Before
 	public void setUp() throws Exception {
+		
 	}
 
 	@Test
