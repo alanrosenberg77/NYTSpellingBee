@@ -9,15 +9,15 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" stylesheets="@spellingBee.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs380.arosenberg.PrimaryController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" stylesheets="@spellingBee.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs380.arosenberg.PrimaryController">
    <center>
       <VBox alignment="CENTER" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="textBox" alignment="CENTER" maxWidth="160.0">
+            <TextField alignment="CENTER" maxWidth="160.0">
                <VBox.margin>
                   <Insets />
                </VBox.margin></TextField>
-            <VBox fx:id="textInput">
+            <VBox>
                <children>
                   <HBox alignment="BOTTOM_CENTER" spacing="5.0">
                      <children>
@@ -48,9 +48,9 @@
             </VBox>
             <HBox alignment="CENTER" spacing="5.0">
                <children>
-                  <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteBtnDo" style="-fx-border-color: #fedc34; -fx-background-color: #ffffff;" text="Delete" />
-                  <Button fx:id="shuffleBtn" mnemonicParsing="false" onAction="#shuffleBtnDo" style="-fx-border-color: #fedc34; -fx-background-color: #ffffff;" text="Shuffle" />
-                  <Button fx:id="enterBtn" mnemonicParsing="false" onAction="#enterBtnDo" style="-fx-border-color: #fedc34; -fx-background-color: #ffffff;" text="Enter" />
+                  <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteBtnDo" styleClass="uiBtn" text="Delete" />
+                  <Button fx:id="shuffleBtn" mnemonicParsing="false" onAction="#shuffleBtnDo" styleClass="uiBtn" text="Shuffle" />
+                  <Button fx:id="enterBtn" mnemonicParsing="false" onAction="#enterBtnDo" styleClass="uiBtn" text="Enter" />
                </children>
                <opaqueInsets>
                   <Insets />

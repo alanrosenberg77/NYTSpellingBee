@@ -18,3 +18,10 @@
 	-fx-scale-x: 0.9;
 	-fx-scale-y: 0.9;
 }
+.uiBtn {
+	-fx-border-color: #fedc34;
+	-fx-background-color: #ffffff;
+}
+.uiBtn:hover {
+	-fx-backgroundcolor: #e6e6e6;
+}
