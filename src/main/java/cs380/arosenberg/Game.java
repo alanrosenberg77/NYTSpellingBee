@@ -44,16 +44,20 @@ public class Game {
 	 */
 	public int awardPoints(String guess) {
 		
+		//total points to be added to player's score
 		int total = 0;
 		
+		//adding a points for every letter in the word
 		for(int i = 0 ; i < guess.length() ; i++) {
 			total++;
 		}
 		
+		//adding an extra 7 points if the word is a pangram
 		if(isPangram(guess)) {
 			total += 7;
 		}
 		
+		//returning allotted total
 		return total;
 	}
 
