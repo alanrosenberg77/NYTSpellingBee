@@ -21,8 +21,9 @@ public class PrimaryCtrlTest {
 		assertNotNull(g);
 	}
 	
+	
 	/*
-	 * readWords tests
+	 * readWords Tests
 	 */
 	@Test
 	public void readWordsTest() {
@@ -33,6 +34,41 @@ public class PrimaryCtrlTest {
 		for(int i=0 ; i<g.getWords().length ; i++) {
 			assertTrue(g.getWords()[i].equals(correctWords[i]));
 		}
+	}
+	
+	
+	/*
+	 * checkGuess Tests
+	 */
+	
+	@Test
+	public void checkGuessTestTrue() {
+		assertTrue(g.checkGuess("analogy"));
+	}
+	
+	@Test
+	public void checkGuessTestFalse() {
+		assertFalse(g.checkGuess("cheese"));
+	}
+	
+	
+	/*
+	 * awardPoints Tests
+	 */
+	
+	@Test
+	public void awardPointsTestNotPangram() {
+		assertEquals(5, g.awardPoints("alloy"));
+	}
+	
+	@Test
+	public void awardPointsTestPangram() {
+		assertEquals(16, g.awardPoints("genealogy"));
+	}
+	
+	@Test
+	public void awardPointsTestEmptyString() {
+		assertEquals(0, g.awardPoints(""));
 	}
 
 }
