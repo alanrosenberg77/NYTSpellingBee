@@ -2,8 +2,8 @@ package cs380.arosenberg;
 
 public class Game {
 
-	private char coreLtr = 'Y';
-	private char[] ltrs = {'O', 'A', 'L', 'N', 'E', 'G'};
+	private String coreLtr = "y";
+	private String[] ltrs = {"o", "a", "l", "y", "n", "e", "g"};
 	private String[] words = {};
 	private int score;
 	private String[] guessed = {};
@@ -67,8 +67,17 @@ public class Game {
 	 * @return true if the guess is a pangram, false if not
 	 */
 	private boolean isPangram(String guess) {
-		// TODO implement isPangram(String guess)
-		return true;
+		
+		boolean isPangram = true;
+		
+		for(int i=0 ; i<ltrs.length ; i++) {
+			if(!guess.contains(ltrs[i])) {
+				isPangram = false;
+				break;
+			}
+		}
+		
+		return isPangram;
 	}
 	
 	public int getScore() {
@@ -79,11 +88,11 @@ public class Game {
 		this.score = score;
 	}
 
-	public char getCoreLtr() {
+	public String getCoreLtr() {
 		return coreLtr;
 	}
 
-	public char[] getLtrs() {
+	public String[] getLtrs() {
 		return ltrs;
 	}
 
