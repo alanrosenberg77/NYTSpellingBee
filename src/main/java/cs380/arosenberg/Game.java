@@ -2,11 +2,11 @@ package cs380.arosenberg;
 
 public class Game {
 
-	char coreLtr = 'Y';
-	char[] ltrs = {'O', 'A', 'L', 'N', 'E', 'G'};
-	String[] words = {};
-	int score;
-	String[] guessed = {};
+	private char coreLtr = 'Y';
+	private char[] ltrs = {'O', 'A', 'L', 'N', 'E', 'G'};
+	private String[] words = {};
+	private int score;
+	private String[] guessed = {};
 	
 	public Game() {
 		words = this.readWords();
@@ -43,7 +43,51 @@ public class Game {
 	 * @return integer amount of points award for just this word
 	 */
 	public int awardPoints(String guess) {
-		// TODO implement awardPoints(String guess)
-		return 0;
+		
+		int total = 0;
+		
+		for(int i = 0 ; i < guess.length() ; i++) {
+			total++;
+		}
+		
+		if(isPangram(guess)) {
+			total += 7;
+		}
+		
+		return total;
+	}
+
+	/**
+	 * isPangram is a private helper method that will determine if a guess is a pangram.
+	 * @param guessed word
+	 * @return true if the guess is a pangram, false if not
+	 */
+	private boolean isPangram(String guess) {
+		// TODO implement isPangram(String guess)
+		return true;
+	}
+	
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	public char getCoreLtr() {
+		return coreLtr;
+	}
+
+	public char[] getLtrs() {
+		return ltrs;
+	}
+
+	public String[] getWords() {
+		return words;
+	}
+
+	public String[] getGuessed() {
+		return guessed;
 	}
 }
