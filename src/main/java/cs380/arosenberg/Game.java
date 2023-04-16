@@ -1,5 +1,12 @@
 package cs380.arosenberg;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Game {
 
 	private String coreLtr = "y";
@@ -20,8 +27,43 @@ public class Game {
 	 * @return array of words, from the file of correct words
 	 */
 	private String[] readWords() {
-		// TODO implement readWords()
-		return null;
+		
+		File f = new File("src/main/resources/cs380/arosenberg/words.txt");
+		BufferedReader br;
+		ArrayList<String> read = new ArrayList<>();
+		
+		try {
+			
+			FileReader fr = new FileReader(f);
+			br = new BufferedReader(fr);
+			
+			String line = br.readLine();
+			
+			while(line != null) {	//So long as there is a next line...
+				
+				System.out.println("Got ["+line+"]");
+				
+				read.add(line);
+				
+				line = br.readLine();	//Reassigned to the next line
+			}
+		}
+		catch (IOException e) {
+			
+			System.out.println(e.getMessage());
+		}
+		catch (Exception e) {
+			
+			System.out.println(e.getMessage());
+		}
+		
+		
+		String[] words = new String[read.size()];
+		for(int i=0 ; i<read.size() ; i++) {
+			words[i] = read.get(i);
+		}
+		
+		return words;
 	}
 	
 	/**
@@ -32,8 +74,17 @@ public class Game {
 	 * @return true if guess is correct, false if not
 	 */
 	public boolean checkGuess(String guess) {
-		// TODO implement checkGuess(String guess)
-		return true;
+		
+		boolean isCorrect = false;
+		
+		for(int i=0 ; i<words.length ; i++) {
+			if(guess.equals(words[i])) {
+				isCorrect = true;
+				break;
+			}
+		}
+		
+		return isCorrect;
 	}
 	
 	/**
