@@ -1,13 +1,17 @@
 package cs380.arosenberg;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-public class PrimaryController {
+public class PrimaryController implements Initializable {
 
     @FXML
     TextField textInput;
@@ -76,30 +80,9 @@ public class PrimaryController {
 		App.setRoot("secondary");
 	}
 
-	public String word;
-
-	public int assignPointValue(String word) {
-		// the pangram is worth an additional seven points.
-		// if the unique letter count is 7, then an additional 7 points should be
-		// awarded
-		String orgInput = word.toLowerCase();
-		int count = 0;
-		int stringLength = word.length();
-		for (int i = 0; i < stringLength; i++) {
-			for (int j = 2; j > j - i - 1; j--) {
-				char temp = orgInput.charAt(i);
-				if (temp == orgInput.charAt(j)) {
-					count++;
-				}
-			}
-		}
-		int bonus = 0;
-		if (stringLength == 7) {
-			bonus = 7;
-		}
-		// the nyt says that all words are worth the same amount of points as their
-		// length
-		int length = word.length();
-		return length + bonus;
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
 	}
 }
