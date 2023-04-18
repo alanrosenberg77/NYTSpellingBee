@@ -2,6 +2,9 @@ package cs380.arosenberg;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
@@ -37,6 +40,8 @@ public class PrimaryController implements Initializable {
     @FXML
     Button ltrBtn7;
     
+    ArrayList<Button> ltrBtns;
+    
     @FXML
     Button deleteBtn;
     
@@ -55,9 +60,11 @@ public class PrimaryController implements Initializable {
     @FXML
     ListView<String> wordList;
     
+    Game g;
+    
     @FXML
     public void ltrBtnDo() {
-    	// TODO give letter buttons functionality
+    	
     }
     
     @FXML
@@ -82,7 +89,24 @@ public class PrimaryController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+		
+		g = new Game();
+		ltrBtns = new ArrayList<>();
+		ltrBtns.add(ltrBtn1);
+		ltrBtns.add(ltrBtn2);
+		ltrBtns.add(ltrBtn3);
+		ltrBtns.add(ltrBtn4);
+		ltrBtns.add(ltrBtn5);
+		ltrBtns.add(ltrBtn6);
+		ltrBtns.add(ltrBtn7);
+		
+		for(int i=0 ; i<ltrBtns.size() ; i++) {
+			ltrBtns.get(i).setText(g.getLtrs()[i].toUpperCase());
+		}
+		
+		scoreLbl.setText(String.valueOf(g.getScore()));
+		countLbl.setText(String.valueOf(g.getGuessed().length));
+		
 		
 	}
 }
