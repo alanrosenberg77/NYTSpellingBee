@@ -63,8 +63,45 @@ public class PrimaryController implements Initializable {
     Game g;
     
     @FXML
-    public void ltrBtnDo() {
-    	
+    public void ltr1Do() {
+    	String ltr = ltrBtn1.getText();
+    	textInput.setText(textInput.getText()+ltr);
+    }
+    
+    @FXML
+    public void ltr2Do() {
+    	String ltr = ltrBtn2.getText();
+    	textInput.setText(textInput.getText()+ltr);
+    }
+    
+    @FXML
+    public void ltr3Do() {
+    	String ltr = ltrBtn3.getText();
+    	textInput.setText(textInput.getText()+ltr);
+    }
+    
+    @FXML
+    public void ltr4Do() {
+    	String ltr = ltrBtn4.getText();
+    	textInput.setText(textInput.getText()+ltr);
+    }
+    
+    @FXML
+    public void ltr5Do() {
+    	String ltr = ltrBtn5.getText();
+    	textInput.setText(textInput.getText()+ltr);
+    }
+    
+    @FXML
+    public void ltr6Do() {
+    	String ltr = ltrBtn6.getText();
+    	textInput.setText(textInput.getText()+ltr);
+    }
+    
+    @FXML
+    public void ltr7Do() {
+    	String ltr = ltrBtn7.getText();
+    	textInput.setText(textInput.getText()+ltr);
     }
     
     @FXML
@@ -79,7 +116,15 @@ public class PrimaryController implements Initializable {
     
     @FXML
     public void enterBtnDo() {
-    	// TODO give enter button functionality
+    	
+    	String guess = textInput.getText().toLowerCase();
+    	if(g.checkGuess(guess)) {
+    		g.awardPoints(guess);
+    	}
+    	
+    	textInput.setText("");
+    	scoreLbl.setText(String.valueOf(g.getScore()));
+    	countLbl.setText(String.valueOf(g.getCorrectGuesses()));
     }
 
 	@FXML

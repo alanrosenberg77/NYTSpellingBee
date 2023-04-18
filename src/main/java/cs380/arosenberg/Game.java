@@ -14,10 +14,12 @@ public class Game {
 	private String[] words = {};
 	private int score;
 	private String[] guessed = {};
+	private int correctGuesses;
 	
 	public Game() {
 		words = this.readWords();
 		score = 0;
+		correctGuesses = 0;
 	}
 	
 	/**
@@ -80,6 +82,7 @@ public class Game {
 		for(int i=0 ; i<words.length ; i++) {
 			if(guess.equals(words[i])) {
 				isCorrect = true;
+				correctGuesses++;
 				break;
 			}
 		}
@@ -153,5 +156,13 @@ public class Game {
 
 	public String[] getGuessed() {
 		return guessed;
+	}
+
+	public int getCorrectGuesses() {
+		return correctGuesses;
+	}
+
+	public void setCorrectGuesses(int correctGuesses) {
+		this.correctGuesses = correctGuesses;
 	}
 }
