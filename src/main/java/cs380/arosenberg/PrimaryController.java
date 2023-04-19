@@ -120,6 +120,7 @@ public class PrimaryController implements Initializable {
     	String guess = textInput.getText().toLowerCase();
     	if(g.checkGuess(guess)) {
     		g.awardPoints(guess);
+    		g.getGuessed().add(guess);
     	}
     	
     	textInput.setText("");
@@ -150,7 +151,7 @@ public class PrimaryController implements Initializable {
 		}
 		
 		scoreLbl.setText(String.valueOf(g.getScore()));
-		countLbl.setText(String.valueOf(g.getGuessed().length));
+		countLbl.setText(String.valueOf(g.getGuessed().size()));
 		
 		
 	}

@@ -58,17 +58,20 @@ public class PrimaryCtrlTest {
 	
 	@Test
 	public void awardPointsTestNotPangram() {
-		assertEquals(5, g.awardPoints("alloy"));
+		g.awardPoints("alloy");
+		assertEquals(5, g.getScore());
 	}
 	
 	@Test
 	public void awardPointsTestPangram() {
-		assertEquals(16, g.awardPoints("genealogy"));
+		g.awardPoints("genealogy");
+		assertEquals(16, g.getScore());
 	}
 	
 	@Test
 	public void awardPointsTestEmptyString() {
-		assertEquals(0, g.awardPoints(""));
+		g.awardPoints("");
+		assertEquals(0, g.getScore());
 	}
 
 }

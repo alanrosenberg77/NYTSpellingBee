@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.LinkedList;
 
 public class Game {
 
@@ -13,12 +14,13 @@ public class Game {
 	private String[] ltrs = {"o", "a", "l", "y", "n", "e", "g"};
 	private String[] words = {};
 	private int score;
-	private String[] guessed = {};
+	private LinkedList<String> guessed;
 	private int correctGuesses;
 	
 	public Game() {
 		words = this.readWords();
 		score = 0;
+		guessed = new LinkedList<>();
 		correctGuesses = 0;
 	}
 	
@@ -96,15 +98,13 @@ public class Game {
 	 * @param guessed word
 	 * @return integer amount of points award for just this word
 	 */
-	public int awardPoints(String guess) {
+	public void awardPoints(String guess) {
 		
 		//total points to be added to player's score
 		int total = 0;
 		
 		//adding a points for every letter in the word
-		for(int i = 0 ; i < guess.length() ; i++) {
-			total++;
-		}
+		total = guess.length();
 		
 		//adding an extra 7 points if the word is a pangram
 		if(isPangram(guess)) {
@@ -112,7 +112,7 @@ public class Game {
 		}
 		
 		//returning allotted total
-		return total;
+		score += total;
 	}
 
 	/**
@@ -154,7 +154,7 @@ public class Game {
 		return words;
 	}
 
-	public String[] getGuessed() {
+	public LinkedList<String> getGuessed() {
 		return guessed;
 	}
 
