@@ -106,12 +106,29 @@ public class PrimaryController implements Initializable {
     
     @FXML
     public void deleteBtnDo() {
-    	// TODO give delete button functionality
+    	String word = textInput.getText();
+    	textInput.setText(word.substring(0, word.length()-1));
     }
     
     @FXML
     public void shuffleBtnDo() {
-    	// TODO give shuffle button functionality
+    	
+    	ArrayList<String> copy = (ArrayList<String>) Arrays.asList(g.getLtrs());
+    	
+    	String l1 = copy.get((int) (Math.random()*copy.size()));
+    	copy.remove(l1);
+    	String l2 = copy.get((int) (Math.random()*copy.size()));
+    	copy.remove(l2);
+    	String l3 = copy.get((int) (Math.random()*copy.size()));
+    	copy.remove(l3);
+    	String l4 = copy.get((int) (Math.random()*copy.size()));
+    	copy.remove(l4);
+    	String l5 = copy.get((int) (Math.random()*copy.size()));
+    	copy.remove(l5);
+    	String l6 = copy.get((int) (Math.random()*copy.size()));
+    	copy.remove(l6);
+    	String l7 = copy.get((int) (Math.random()*copy.size()));
+    	copy.remove(l7);
     }
     
     @FXML

@@ -134,6 +134,10 @@ public class Game {
 		return isPangram;
 	}
 	
+	/*
+	 * Getters and Setters
+	 */
+	
 	public int getScore() {
 		return score;
 	}
