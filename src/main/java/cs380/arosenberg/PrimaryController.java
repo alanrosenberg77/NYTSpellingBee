@@ -113,7 +113,8 @@ public class PrimaryController implements Initializable {
     @FXML
     public void shuffleBtnDo() {
     	
-    	ArrayList<String> copy = (ArrayList<String>) Arrays.asList(g.getLtrs());
+    	List<String> copy = new ArrayList<String>(Arrays.asList(g.getLtrs()));
+    	copy.remove(g.getCoreLtr());
     	
     	String l1 = copy.get((int) (Math.random()*copy.size()));
     	copy.remove(l1);
@@ -121,14 +122,19 @@ public class PrimaryController implements Initializable {
     	copy.remove(l2);
     	String l3 = copy.get((int) (Math.random()*copy.size()));
     	copy.remove(l3);
-    	String l4 = copy.get((int) (Math.random()*copy.size()));
-    	copy.remove(l4);
     	String l5 = copy.get((int) (Math.random()*copy.size()));
     	copy.remove(l5);
     	String l6 = copy.get((int) (Math.random()*copy.size()));
     	copy.remove(l6);
     	String l7 = copy.get((int) (Math.random()*copy.size()));
     	copy.remove(l7);
+    	
+    	ltrBtn1.setText(l1.toUpperCase());
+    	ltrBtn2.setText(l2.toUpperCase());
+    	ltrBtn3.setText(l3.toUpperCase());
+    	ltrBtn5.setText(l5.toUpperCase());
+    	ltrBtn6.setText(l6.toUpperCase());
+    	ltrBtn7.setText(l7.toUpperCase());
     }
     
     @FXML
