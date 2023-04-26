@@ -140,6 +140,8 @@ public class PrimaryController implements Initializable {
     @FXML
     public void enterBtnDo() {
     	
+    	wordList.getItems().clear();
+    	
     	String guess = textInput.getText().toLowerCase();
     	if(g.checkGuess(guess)) {
     		g.awardPoints(guess);
@@ -149,6 +151,10 @@ public class PrimaryController implements Initializable {
     	textInput.setText("");
     	scoreLbl.setText(String.valueOf(g.getScore()));
     	countLbl.setText(String.valueOf(g.getCorrectGuesses()));
+    	
+    	for(int i=0 ; i<g.getGuessed().size() ; i++) {
+    		wordList.getItems().add(g.getGuessed().get(i));
+    	}
     }
 
 	@FXML

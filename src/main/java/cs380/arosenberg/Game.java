@@ -81,6 +81,12 @@ public class Game {
 		
 		boolean isCorrect = false;
 		
+		for(int i=0 ; i<guessed.size() ; i++) {
+			if(guess.equals(guessed.get(i))) {
+				return isCorrect;
+			}
+		}
+		
 		for(int i=0 ; i<words.length ; i++) {
 			if(guess.equals(words[i])) {
 				isCorrect = true;

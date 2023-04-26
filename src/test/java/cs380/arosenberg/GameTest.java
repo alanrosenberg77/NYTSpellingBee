@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class PrimaryCtrlTest {
+public class GameTest {
 	
 	Game g;
 	String[] correctWords = {"agony", "allay", "alley", "alloy", "ally", "anally", "analogy", "annoy", "anyone", "eely", "eggy", "elegy", "galley", "gangly", "gayly", "genealogy", "geology", "goggly", "golly", "gooey", "googly", "goony", "laggy", "lallygag", "leanly", "legally", "leggy", "logy", "lollygag", "lonely", "loony", "loyal", "loyally", "naggy", "nanny", "nylon", "oenology", "onlay", "only", "yang", "yell", "yoga"};
@@ -49,6 +49,12 @@ public class PrimaryCtrlTest {
 	@Test
 	public void checkGuessTestFalse() {
 		assertFalse(g.checkGuess("cheese"));
+	}
+	
+	@Test
+	public void checkGuessTestAlreadyGuessed() {
+		g.getGuessed().add("analogy");
+		assertFalse(g.checkGuess("analogy"));
 	}
 	
 	
