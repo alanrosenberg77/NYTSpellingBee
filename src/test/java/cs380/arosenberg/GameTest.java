@@ -57,6 +57,11 @@ public class GameTest {
 		assertFalse(g.checkGuess("analogy"));
 	}
 	
+	@Test
+	public void checkGuessTestEmptyString() {
+		assertFalse(g.checkGuess(""));
+	}
+	
 	
 	/*
 	 * awardPoints Tests

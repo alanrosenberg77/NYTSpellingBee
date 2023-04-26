@@ -150,7 +150,7 @@ public class PrimaryController implements Initializable {
     	
     	textInput.setText("");
     	scoreLbl.setText(String.valueOf(g.getScore()));
-    	countLbl.setText(String.valueOf(g.getCorrectGuesses()));
+    	countLbl.setText(String.valueOf(g.getGuessed().size()));
     	
     	for(int i=0 ; i<g.getGuessed().size() ; i++) {
     		wordList.getItems().add(g.getGuessed().get(i));

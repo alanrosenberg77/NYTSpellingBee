@@ -8,20 +8,31 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 
+/**
+ * An instance of the Game class is will represent a game of the NYT Spelling Bee.
+ * It acts as a data sack, storing the core letter, list of all letters, list of
+ * correct words, player's score, and list of guessed words. The Game class can also
+ * read words from a data file and store those words into the correct words list
+ * for quick reference when the user makes a guess. Game can check whether a guess
+ * is correct or not, as well as award points for a correct guess.
+ * @author alanr
+ *
+ */
 public class Game {
 
-	private String coreLtr = "y";
+	private String coreLtr = "y";	//required "core" letter
 	private String[] ltrs = {"o", "a", "l", "y", "n", "e", "g"};
-	private String[] words = {};
+	private String[] words = {};	//list of all correct words
 	private int score;
-	private LinkedList<String> guessed;
-	private int correctGuesses;
+	private LinkedList<String> guessed;		//tracking all guessed words
 	
+	/**
+	 * Default constructor initializing local variables to starting values
+	 */
 	public Game() {
 		words = this.readWords();
 		score = 0;
 		guessed = new LinkedList<>();
-		correctGuesses = 0;
 	}
 	
 	/**
@@ -32,24 +43,26 @@ public class Game {
 	 */
 	private String[] readWords() {
 		
+		//setting up
 		File f = new File("src/main/resources/cs380/arosenberg/words.txt");
 		BufferedReader br;
-		ArrayList<String> read = new ArrayList<>();
+		ArrayList<String> read = new ArrayList<>();	//holding onto words read from file
 		
 		try {
 			
 			FileReader fr = new FileReader(f);
 			br = new BufferedReader(fr);
 			
+			//reading lines
 			String line = br.readLine();
 			
 			while(line != null) {	//So long as there is a next line...
 				
 				System.out.println("Got ["+line+"]");
 				
-				read.add(line);
+				read.add(line);			//adding word to local list
 				
-				line = br.readLine();	//Reassigned to the next line
+				line = br.readLine();	//reading the next line
 			}
 		}
 		catch (IOException e) {
@@ -61,7 +74,7 @@ public class Game {
 			System.out.println(e.getMessage());
 		}
 		
-		
+		//copying words into global word list
 		String[] words = new String[read.size()];
 		for(int i=0 ; i<read.size() ; i++) {
 			words[i] = read.get(i);
@@ -74,23 +87,26 @@ public class Game {
 	 * checkGuess will take a guess word and check to see if that word is correct.
 	 * It returns a boolean indicating whether the guess is correct or not.
 	 * Either way, the method will append the word to guessed, the array of guessed words.
+	 * If word already exists in guessed, this method will return false
 	 * @param guessed word
 	 * @return true if guess is correct, false if not
 	 */
 	public boolean checkGuess(String guess) {
 		
+		//assuming guess is false by default
 		boolean isCorrect = false;
 		
+		//if guess exists in guessed list, returning false
 		for(int i=0 ; i<guessed.size() ; i++) {
 			if(guess.equals(guessed.get(i))) {
 				return isCorrect;
 			}
 		}
 		
+		//if guess exists in the list of correct words, returning true
 		for(int i=0 ; i<words.length ; i++) {
 			if(guess.equals(words[i])) {
 				isCorrect = true;
-				correctGuesses++;
 				break;
 			}
 		}
@@ -128,8 +144,10 @@ public class Game {
 	 */
 	private boolean isPangram(String guess) {
 		
+		//assuming guess is a pangram
 		boolean isPangram = true;
 		
+		//if guess  does not contain all letters from list of letters, returning false
 		for(int i=0 ; i<ltrs.length ; i++) {
 			if(!guess.contains(ltrs[i])) {
 				isPangram = false;
@@ -166,13 +184,5 @@ public class Game {
 
 	public LinkedList<String> getGuessed() {
 		return guessed;
-	}
-
-	public int getCorrectGuesses() {
-		return correctGuesses;
-	}
-
-	public void setCorrectGuesses(int correctGuesses) {
-		this.correctGuesses = correctGuesses;
 	}
 }
