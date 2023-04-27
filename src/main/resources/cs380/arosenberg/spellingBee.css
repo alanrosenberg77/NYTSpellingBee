@@ -1,5 +1,7 @@
 .ltrBtn {
 	-fx-background-color: #e6e6e6;
+	-fx-font-family: Verdana;
+	-fx-font-size: 18px;
 }
 .ltrBtn:hover {
 	-fx-background-color: #999999;
@@ -24,4 +26,7 @@
 }
 .uiBtn:hover {
 	-fx-backgroundcolor: #e6e6e6;
+}
+.text {
+	-fx-font-family: Verdana;
 }

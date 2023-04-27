@@ -13,6 +13,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 
 public class PrimaryController implements Initializable {
 
@@ -59,6 +60,9 @@ public class PrimaryController implements Initializable {
     
     @FXML
     ListView<String> wordList;
+    
+    @FXML
+    Text feedbackTxt;
     
     Game g;
     
@@ -135,6 +139,9 @@ public class PrimaryController implements Initializable {
     	ltrBtn5.setText(l5.toUpperCase());
     	ltrBtn6.setText(l6.toUpperCase());
     	ltrBtn7.setText(l7.toUpperCase());
+    	
+    	feedbackTxt.setVisible(true);
+    	feedbackTxt.setText("Shuffled!");
     }
     
     @FXML
@@ -144,8 +151,14 @@ public class PrimaryController implements Initializable {
     	
     	String guess = textInput.getText().toLowerCase();
     	if(g.checkGuess(guess)) {
+    		feedbackTxt.setVisible(true);
+    		feedbackTxt.setText("Correct!");
     		g.awardPoints(guess);
-    		g.getGuessed().add(guess);
+    		g.getGuessed().add(guess.toUpperCase());
+    	}
+    	else {
+    		feedbackTxt.setVisible(true);
+    		feedbackTxt.setText("Try Again");
     	}
     	
     	textInput.setText("");

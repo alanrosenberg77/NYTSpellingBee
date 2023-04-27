@@ -13,91 +13,125 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" stylesheets="@spellingBee.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs380.arosenberg.PrimaryController">
-   <center>
-      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
-         <children>
-            <TextField fx:id="textInput" alignment="CENTER" maxWidth="160.0">
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin></TextField>
-            <VBox>
-               <children>
-                  <HBox alignment="BOTTOM_CENTER" spacing="5.0">
-                     <children>
-                        <Button fx:id="ltrBtn1" alignment="CENTER" mnemonicParsing="false" onAction="#ltr1Do" prefHeight="50.0" prefWidth="50.0" styleClass="ltrBtn" text="Letter" />
-                        <Button fx:id="ltrBtn2" alignment="CENTER" mnemonicParsing="false" onAction="#ltr2Do" prefHeight="50.0" prefWidth="50.0" styleClass="ltrBtn" text="Letter" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER" spacing="5.0">
-                     <children>
-                        <Button fx:id="ltrBtn3" alignment="CENTER" mnemonicParsing="false" onAction="#ltr3Do" prefHeight="50.0" prefWidth="50.0" styleClass="ltrBtn" text="Letter" />
-                        <Button id="centerBtn" fx:id="ltrBtn4" alignment="CENTER" mnemonicParsing="false" onAction="#ltr4Do" prefHeight="50.0" prefWidth="50.0" text="Letter" />
-                        <Button fx:id="ltrBtn5" alignment="CENTER" mnemonicParsing="false" onAction="#ltr5Do" prefHeight="50.0" prefWidth="50.0" styleClass="ltrBtn" text="Letter" />
-                     </children>
-                     <VBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </VBox.margin>
-                  </HBox>
-                  <HBox alignment="TOP_CENTER" spacing="5.0">
-                     <children>
-                        <Button fx:id="ltrBtn6" alignment="CENTER" mnemonicParsing="false" onAction="#ltr6Do" prefHeight="50.0" prefWidth="50.0" styleClass="ltrBtn" text="Letter" />
-                        <Button fx:id="ltrBtn7" alignment="CENTER" mnemonicParsing="false" onAction="#ltr7Do" prefHeight="50.0" prefWidth="50.0" styleClass="ltrBtn" text="Letter" />
-                     </children>
-                  </HBox>
-               </children>
-               <VBox.margin>
-                  <Insets bottom="20.0" top="20.0" />
-               </VBox.margin>
-            </VBox>
-            <HBox alignment="CENTER" spacing="5.0">
-               <children>
-                  <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteBtnDo" styleClass="uiBtn" text="Delete" />
-                  <Button fx:id="shuffleBtn" mnemonicParsing="false" onAction="#shuffleBtnDo" styleClass="uiBtn" text="Shuffle" />
-                  <Button fx:id="enterBtn" mnemonicParsing="false" onAction="#enterBtnDo" styleClass="uiBtn" text="Enter" />
-               </children>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <VBox.margin>
-                  <Insets />
-               </VBox.margin>
-            </HBox>
-         </children>
-         <BorderPane.margin>
-            <Insets right="20.0" />
-         </BorderPane.margin>
-      </VBox>
-   </center>
-   <right>
-      <VBox BorderPane.alignment="CENTER">
-         <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="Score: " />
-                  <Label fx:id="scoreLbl" text="###" />
-               </children>
-            </HBox>
-            <HBox prefHeight="100.0" prefWidth="200.0">
-               <children>
-                  <Label text="You have found " />
-                  <Label fx:id="countLbl" text="_" />
-                  <Label text=" words" />
-               </children>
-            </HBox>
-            <ListView fx:id="wordList" prefWidth="200.0" />
-         </children>
-         <padding>
-            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-         </padding>
-      </VBox>
-   </right>
+<BorderPane minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" stylesheets="@spellingBee.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs380.arosenberg.PrimaryController">
    <opaqueInsets>
       <Insets />
    </opaqueInsets>
    <padding>
-      <Insets bottom="50.0" left="50.0" right="50.0" top="30.0" />
+      <Insets bottom="50.0" left="50.0" right="50.0" top="20.0" />
    </padding>
+   <center>
+      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER" prefWidth="240.0">
+               <children>
+                  <TextField fx:id="textInput" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="35.0" minWidth="240.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Verdana" size="14.0" />
+                     </font>
+                  </TextField>
+                  <VBox>
+                     <children>
+                        <HBox alignment="BOTTOM_CENTER" spacing="5.0">
+                           <children>
+                              <Button fx:id="ltrBtn1" alignment="CENTER" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#ltr1Do" prefHeight="50.0" prefWidth="50.0" styleClass="ltrBtn" text="?">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="ltrBtn2" alignment="CENTER" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#ltr2Do" prefHeight="50.0" prefWidth="50.0" styleClass="ltrBtn" text="?">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="5.0">
+                           <children>
+                              <Button fx:id="ltrBtn3" alignment="CENTER" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#ltr3Do" prefHeight="50.0" prefWidth="50.0" styleClass="ltrBtn" text="?">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button id="centerBtn" fx:id="ltrBtn4" alignment="CENTER" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#ltr4Do" prefHeight="50.0" prefWidth="50.0" styleClass="ltrBtn" text="?">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="ltrBtn5" alignment="CENTER" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#ltr5Do" prefHeight="50.0" prefWidth="50.0" styleClass="ltrBtn" text="?">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="TOP_CENTER" spacing="5.0">
+                           <children>
+                              <Button fx:id="ltrBtn6" alignment="CENTER" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onAction="#ltr6Do" prefHeight="50.0" prefWidth="50.0" styleClass="ltrBtn" text="?">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="ltrBtn7" alignment="CENTER" mnemonicParsing="false" onAction="#ltr7Do" prefHeight="50.0" prefWidth="50.0" styleClass="ltrBtn" text="?">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <HBox alignment="CENTER" minHeight="25.0" spacing="5.0">
+                     <children>
+                        <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#deleteBtnDo" styleClass="uiBtn" text="Delete" />
+                        <Button fx:id="shuffleBtn" mnemonicParsing="false" onAction="#shuffleBtnDo" styleClass="uiBtn" text="Shuffle" />
+                        <Button fx:id="enterBtn" mnemonicParsing="false" onAction="#enterBtnDo" styleClass="uiBtn" text="Enter" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+            <VBox prefWidth="240.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Label text="Score: " />
+                        <Label fx:id="scoreLbl" text="###" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Label text="You have found " />
+                        <Label fx:id="countLbl" text="_" />
+                        <Label text=" words" />
+                     </children>
+                  </HBox>
+                  <ListView fx:id="wordList" maxHeight="1.7976931348623157E308" prefWidth="250.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets top="30.0" />
+         </BorderPane.margin>
+      </HBox>
+   </center>
    <top>
       <StackPane BorderPane.alignment="CENTER">
          <children>
@@ -109,8 +143,15 @@
             </Text>
          </children>
          <BorderPane.margin>
-            <Insets bottom="20.0" />
+            <Insets />
          </BorderPane.margin>
       </StackPane>
    </top>
+   <bottom>
+      <Text fx:id="feedbackTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Feedback Text" translateY="30.0" visible="false" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Verdana" size="14.0" />
+         </font>
+      </Text>
+   </bottom>
 </BorderPane>
