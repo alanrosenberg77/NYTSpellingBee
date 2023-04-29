@@ -13,12 +13,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" stylesheets="@spellingBee.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs380.arosenberg.PrimaryController">
+<BorderPane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" stylesheets="@spellingBee.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cs380.arosenberg.GameController">
    <opaqueInsets>
       <Insets />
    </opaqueInsets>
    <padding>
-      <Insets bottom="50.0" left="50.0" right="50.0" top="20.0" />
+      <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
    </padding>
    <center>
       <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
@@ -110,17 +110,16 @@
             </VBox>
             <VBox prefWidth="240.0">
                <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="NEVER">
+                  <HBox alignment="CENTER_LEFT" minHeight="35.0" VBox.vgrow="NEVER">
                      <children>
-                        <Label text="Score: " />
-                        <Label fx:id="scoreLbl" text="###" />
-                     </children>
-                  </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="NEVER">
-                     <children>
-                        <Label text="You have found " />
-                        <Label fx:id="countLbl" text="_" />
-                        <Label text=" words" />
+                        <Label text="Score: ">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Label fx:id="scoreLbl" text="###">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
                      </children>
                   </HBox>
                   <ListView fx:id="wordList" maxHeight="1.7976931348623157E308" prefWidth="250.0" VBox.vgrow="ALWAYS" />
@@ -148,10 +147,13 @@
       </StackPane>
    </top>
    <bottom>
-      <Text fx:id="feedbackTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Feedback Text" translateY="30.0" visible="false" BorderPane.alignment="CENTER">
+      <Text fx:id="feedbackTxt" strokeType="OUTSIDE" strokeWidth="0.0" text="Feedback Text" visible="false" BorderPane.alignment="CENTER">
          <font>
             <Font name="Verdana" size="14.0" />
          </font>
+         <BorderPane.margin>
+            <Insets top="30.0" />
+         </BorderPane.margin>
       </Text>
    </bottom>
 </BorderPane>

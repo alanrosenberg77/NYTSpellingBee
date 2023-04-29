@@ -1,13 +1,11 @@
 package cs380.arosenberg;
 
 import javafx.application.Application;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.awt.event.KeyEvent;
 import java.io.IOException;
 
 /**
@@ -19,7 +17,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("primary"), 600, 400);
+        scene = new Scene(loadFXML("game"), 600, 400);
         stage.setScene(scene);
         stage.setTitle("Spelling Bee");
         stage.show();
